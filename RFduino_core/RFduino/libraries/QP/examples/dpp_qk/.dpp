@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="3.1.1">
+ <item name="license">GPL</item>
+ <group name="locked"/>
+ <group name="settings">
+  <item name="tabs">1</item>
+  <item name="windows">1</item>
+  <item name="grid">3</item>
+ </group>
+ <group name="windows"/>
+ <group name="search">
+  <item name="options">4129280</item>
+  <item name="replace">0</item>
+ </group>
+ <group name="vars">
+  <item id="PROJECT">dpp_qk</item>
+  <item id="ARDUINO_HOME">C:\Program Files (x86)\Arduino</item>
+  <item id="BOARD_MCU">atmega328p</item>
+  <item id="BOARD_VARIANT">standard</item>
+  <item id="BOARD_F_MHZ">16</item>
+  <item id="BOARD_COM">COM5</item>
+  <item id="BOARD_BAUD">115200</item>
+ </group>
+ <group name="tools">
+  <group name="tool">
+   <item name="icon">3</item>
+   <item name="title">build</item>
+   <item name="command">&quot;%ARDUINO_HOME%\hardware\tools\avr\bin\tclsh84.exe&quot;</item>
+   <item name="args">&quot;%ARDUINO_HOME%\tools\qtools\avrmake.tcl&quot; %PROJECT% &quot;QP&quot; &quot;QK_PREEMPTIVE&quot;</item>
+   <item name="initial">.</item>
+   <item name="options">3</item>
+  </group>
+  <group name="tool">
+   <item name="icon">5</item>
+   <item name="title">clean</item>
+   <item name="command">&quot;%ARDUINO_HOME%\tools\qtools\rm.exe&quot;</item>
+   <item name="args">bin\*</item>
+   <item name="initial">.</item>
+   <item name="options">2</item>
+  </group>
+  <group name="tool">
+   <item name="icon">6</item>
+   <item name="title">upload</item>
+   <item name="command">&quot;%ARDUINO_HOME%\hardware\tools\avr\bin\avrdude&quot;</item>
+   <item name="args">-p %BOARD_MCU% -c arduino -P %BOARD_COM% -b %BOARD_BAUD% -D -v -C &quot;%ARDUINO_HOME%\hardware\tools\avr\etc\avrdude.conf&quot; -U flash:w:bin\%PROJECT%.hex:i</item>
+   <item name="initial">.</item>
+   <item name="options">2</item>
+  </group>
+  <group name="tool">
+   <item name="icon">8</item>
+   <item name="title">teraterm</item>
+   <item name="command">C:\tools\teraterm-4.77\ttermpro.exe</item>
+   <item name="args">/%BOARD_COM% /%BOARD_SPEED%</item>
+   <item name="initial"></item>
+   <item name="options">4</item>
+  </group>
+  <group name="tool">
+   <item name="icon">5</item>
+   <item name="title">clean all</item>
+   <item name="command">&quot;%ARDUINO_HOME%\tools\qtools\rm.exe&quot;</item>
+   <item name="args">bin\* lib\*</item>
+   <item name="initial"></item>
+   <item name="options">2</item>
+  </group>
+ </group>
+</session>
