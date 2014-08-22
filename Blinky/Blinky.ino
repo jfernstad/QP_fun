@@ -9,7 +9,7 @@
 #include "Arduino.h"  // always include in your sketch
 #include "Blink.h"
 #include "bsp.h"
-//#include "nrf.h"
+#include "tick.h"
 
 // Pin 3 has an green LED connected on the RGB LED shield
 // give it a name:
@@ -53,20 +53,19 @@ void QF::onIdle() {
 //............................................................................
 void Q_onAssert(char const Q_ROM * const Q_ROM_VAR file, int line) {
   QF_INT_DISABLE(); // disable all interrupts
-  BSP_ledOn(); // User LED permanently ON
+  BSP_ledOn(LED_RED); // User LED permanently ON
   //asm volatile ("jmp 0x0000"); // perform a software reset of the Arduino
 
 }
 
 static Blinky l_blinky;                            // the Blinky active object
 static QEvt const *l_blinkyQSto[10];         // Event queue storage for Blinky
+//static RTCTick tick;
 
 //............................................................................
 void setup() {
   BSP_init(); // initialize the BSP
   QF::init(); // initialize the framework and the underlying RT kernel
-
-  //BSP_ledOn();
 
   l_blinky.start(1U,
                  l_blinkyQSto, Q_DIM(l_blinkyQSto),

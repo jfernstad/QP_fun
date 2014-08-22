@@ -1,5 +1,6 @@
 #include "Blink.h"
 #include "bsp.h"
+#include "tick.h"
 
 //............................................................................
 
@@ -29,7 +30,7 @@ QState Blinky::off(Blinky * const me, QEvt const * const e) {
 
   switch (e->sig) {
     case Q_ENTRY_SIG: {
-        BSP_ledOff();
+        BSP_ledOff(LED_GREEN);
         me->m_timeEvt.postIn(me, BSP_TICKS_PER_SEC / 2U);
         status = Q_HANDLED();
         break;
@@ -55,7 +56,7 @@ QState Blinky::on(Blinky * const me, QEvt const * const e) {
 
   switch (e->sig) {
     case Q_ENTRY_SIG: {
-        BSP_ledOn();
+        BSP_ledOn(LED_GREEN);
         me->m_timeEvt.postIn(me, BSP_TICKS_PER_SEC / 2U);
         status = Q_HANDLED();
         break;
