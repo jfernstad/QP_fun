@@ -5,10 +5,10 @@
 void BSP_init(void) {
   //DDRB  = 0xFF; // All PORTB pins are outputs (user LED)
   //PORTB = 0x00; // drive all pins low
-  pinMode(LED_RED, OUTPUT);
-  pinMode(LED_GREEN, OUTPUT);
-  pinMode(LED_BLUE, OUTPUT);
-  pinMode(LED_YELLOW, OUTPUT);
+  pinMode((int)LED_RED, OUTPUT);
+  pinMode((int)LED_GREEN, OUTPUT);
+  pinMode((int)LED_BLUE, OUTPUT);
+  pinMode((int)LED_YELLOW, OUTPUT);
 }
 //............................................................................
 void BSP_ledOff(RDFDUINO_LEDS led) {

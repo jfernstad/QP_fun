@@ -3,6 +3,7 @@
 #ifndef __BLINK_H__
 #define __BLINK_H__
 
+
 enum BlinkySignals { // signals for the Blinky application
   TIMEOUT_SIG = 1000//Q_USER_SIG
 };

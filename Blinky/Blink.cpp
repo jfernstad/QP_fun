@@ -1,6 +1,5 @@
 #include "Blink.h"
 #include "bsp.h"
-#include "tick.h"
 
 //............................................................................
 
@@ -19,8 +18,6 @@ QState Blinky::initial(Blinky * const me, QEvt const * const e) {
 
   (void)e; // avoid compiler warning about unused argument
 
-  // arm the time event to expire in half a second and every half second
-  me->m_timeEvt.postIn(me, BSP_TICKS_PER_SEC / 2U);
   return Q_TRAN(&Blinky::off);
 
 }

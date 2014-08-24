@@ -2,6 +2,11 @@
 #ifndef __bsp_h_
 #define __bsp_h_
 
+#define BSP_RTC_FREQ         (32768)
+#define BSP_TICKS_PER_SEC    (100)
+#define BSP_TICK_DURATION_MS (1000/BSP_TICKS_PER_SEC)
+#define TIMER_RESOLUTION_MS  BSP_TICK_DURATION_MS
+
 extern int led_green;
 
 #ifdef __cplusplus
