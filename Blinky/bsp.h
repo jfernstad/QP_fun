@@ -1,6 +1,6 @@
 
-#ifndef __bsp_h_
-#define __bsp_h_
+#ifndef __RFDUINO_BSP_H_
+#define __RFDUINO_BSP_H_
 
 #define BSP_RTC_FREQ         (32768)
 #define BSP_TICKS_PER_SEC    (100)
