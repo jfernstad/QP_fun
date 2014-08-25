@@ -8,8 +8,7 @@
 #include <qp_port.h>
 #include "Arduino.h"  // always include in your sketch
 #include "Blink.h"
-#include "bsp.h"
-#include "tick.h"
+#include "rfqp.h"
 
 using namespace QP;
 
